@@ -11,14 +11,18 @@ title: Nuxt 3 Server and Faker API Starter
  01110100  01100001 01110010  01110100  01100101  01110010 
 ```
 - Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+- Also have a look at this [Full app on GutHub](https://github.com/charlpcronje/faker.nuxt.cronje.me)
 
-> [Project on Github](https://github.com/charlpcronje/faker.nuxt.cronje.me)
-
-## Setup
+## Clone project and Install Dependencies
 
 Make sure to install the dependencies:
 
 ```bash
+mkdir nuxtFaker
+cd nuxtFaker
+
+git clone ttps://github.com/charlpcronje/faker.nuxt.cronje.me .
+
 # yarn
 yarn install
 
