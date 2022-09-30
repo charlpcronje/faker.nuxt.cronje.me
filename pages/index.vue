@@ -2,7 +2,7 @@
   <div class="container m-6">
     <div>
       <h1 class="title is-3 has-text-centered">
-        Nuxt3 Server & Faker Users API
+        Nuxt3 & Faker API
       </h1>
     </div>
     <div class="section has-text-centered">
@@ -39,44 +39,44 @@
       </div>
 
       <div class="section buttons is-centered ">
-          <a :href="`/api/fake-users?take=${take}`" class="button is-link">Nuxt3 Server API Endpoint</a>
+          <a :href="`/api/fake-users?take=${take}`" class="button is-link">Nuxt3 API Endpoint</a>
           <a :href="`/fake-users?take=${take}`" class="button is-warning">Nuxt3 Server Route</a>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-const users = ref([]);
-const take = ref(3);
+<script lang="ts" setup>
+  const users = ref([]);
+  const take = ref(3);
 
-const handleChange = () => {
-  getUsers(take.value);
-};
+  const handleChange = () => {
+    getUsers(take.value);
+  };
 
-const getUsers = async (qty) => {
-  //   const data = await $fetch(`/fake-users?take=${qty}`);
-  const data = await $fetch(`/api/fake-users?take=${qty}`);
-  users.value = data.users;
-};
+  const getUsers = async (qty) => {
+    //   const data = await $fetch(`/fake-users?take=${qty}`);
+    const data = await $fetch(`/api/fake-users?take=${qty}`);
+    users.value = data.users;
+  };
 
-onMounted(async () => {
-  getUsers(take.value);
-});
-</script>
+  onMounted(async () => {
+    getUsers(take.value);
+  });
+  </script>
 
-<style scoped>
-.card {
-  min-width: 200px;
-  width: 270px;
-}
+  <style scoped>
+  .card {
+    min-width: 200px;
+    width: 270px;
+  }
 
-.users {
-    gap: 1rem;
-}
+  .users {
+      gap: 1rem;
+  }
 
-.input {
-    max-width: 100px;
-    text-align: center;
-}
+  .input {
+      max-width: 100px;
+      text-align: center;
+  }
 </style>
